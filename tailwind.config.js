@@ -11,6 +11,9 @@ module.exports = {
     fontFamily: {
       Inter: ["Inter", "sans-serif"],
     },
+    fontSize: {
+      time: "4rem",
+    },
     extend: {
       backgroundImage: {
         dayMobile:

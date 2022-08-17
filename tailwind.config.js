@@ -6,13 +6,11 @@ module.exports = {
       black: "#000000",
       gray: "#303030",
       white: "#FFFFFF",
+      data: "#ecf0f1",
       bg: "rgba(49, 53, 50, 0.36)",
     },
     fontFamily: {
       Inter: ["Inter", "sans-serif"],
-    },
-    fontSize: {
-      time: "4rem",
     },
     extend: {
       backgroundImage: {

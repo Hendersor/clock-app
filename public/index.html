@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="h-screen w-full bg-dayMobile md:bg-dayTablet">
+      <section
+        class="border-red flex justify-between bg-bg h-1/4"
+        id="randomQuote"
+      >
+        <div class="p-5 w-10/12 flex flex-col justify-between">
+          <p class="text-white text-sm">
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            asperiores accusantium deserunt cumque quas doloremque rem, culpa
+            illo".
+          </p>
+          <p class="text-white lg:text-black">Anonymous</p>
+        </div>
+
+        <figure class="p-5">
+          <img
+            src="https://res.cloudinary.com/dwdz4mn27/image/upload/v1660698704/clock-app/starter-code/assets/desktop/icon-refresh_xg4mrc.svg"
+            alt="refresh icon"
+          />
+        </figure>
+      </section>
+      <section id="timeSection" class="h-3/4 bg-bg">
+        <div id="infoSection" class="h-3/4 flex flex-col justify-end p-5">
+          <h2 class="flex text-white text-base tracking-widest">
+            <span class="mr-2">
+              <img
+                src="https://res.cloudinary.com/dwdz4mn27/image/upload/v1660698704/clock-app/starter-code/assets/desktop/icon-sun_fo9o20.svg"
+                alt="icon"
+              />
+            </span>
+            GOOD MORNING
+          </h2>
+          <h1 class="text-white text-8xl font-bold w-full md:text-sm">
+            11:37 <span id="abbreviation" class="text-sm font-thin">BTS</span>
+          </h1>
+          <h2 class="text-white font-bold tracking-widest">
+            IN <span id="state">LONDON</span>,<span id="country">UK</span>
+          </h2>
+        </div>
+
+        <div id="buttonSection" class="h-20 border-2 border-white">
+          <button
+            type="button"
+            class="w-32 h-20 flex items-center justify-evenly rounded-full text-center bg-white text-gray tracking-widest"
+          >
+            More
+            <figure
+              class="w-1/4 h-full self-end flex items-center justify-center"
+            >
+              <img
+                class="w-full h-8 align-middle rotate-180"
+                src="https://res.cloudinary.com/dwdz4mn27/image/upload/v1660698702/clock-app/starter-code/assets/desktop/icon-arrow-up_qad1xz.svg"
+                alt="icon-arrow"
+              />
+            </figure>
+          </button>
+        </div>
+      </section>
+    </main>
+    <section id="data" class="w-full h-80 bg-data px-2">
+      <div class="w-full flex justify-between items-center h-20">
+        <h1 class="tracking-widest font-thin text-sm">CURRENT TIMEZONE</h1>
+        <h1 id="timeZone" class="font-bold text-black text-2xl">
+          Europe/London
+        </h1>
+      </div>
+      <div class="w-full flex justify-between items-center h-20">
+        <h1 class="tracking-widest font-thin text-sm">DAY OF THE YEAR</h1>
+        <h1 id="dayOfTheYear" class="font-bold text-2xl">295</h1>
+      </div>
+      <div class="w-full flex justify-between items-center h-20">
+        <h1 class="tracking-widest font-thin text-sm">DAY OF THE WEEK</h1>
+        <h1 id="dayOfTheWeek" class="font-bold text-2xl">5</h1>
+      </div>
+      <div class="w-full flex justify-between items-center h-20">
+        <h1 class="tracking-widest font-thin text-sm">WEEK NUMBER</h1>
+        <h1 id="weekNumber" class="font-bold text-2xl">42</h1>
+      </div>
+    </section>
+  </body>
+  <script src="../src/index.js"></script>
+</html>

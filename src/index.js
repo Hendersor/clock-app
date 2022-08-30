@@ -6,6 +6,19 @@ const apiLocation =
   "https://api.ipbase.com/v2/info?apikey=0CaYR2iagldHav1ltslfW8vJbyP3yW3swiDit7Dy&ip=1.1.1.1";
 
 const apiTime = "http://worldtimeapi.org/api/timezone";
+const apiQuotes = "https://programming-quotes-api.herokuapp.com/Quotes/random";
+
+const quoteApiConection = async (apiQuotes) => {
+  const quote = document.getElementById("quote");
+  const author = document.getElementById("author");
+  const responseQuote = await fetch(apiQuotes);
+  const quoteData = await responseQuote.json();
+  quote.innerText = quoteData.en;
+  author.innerText = quoteData.author;
+};
+
+const refreshIcon = document.getElementById("refreshIcon");
+refreshIcon.addEventListener("click", quoteApiConection(apiQuotes));
 
 const conectionAPI = async (apiLocation, apiTime) => {
   const responseLocation = await fetch(apiLocation);

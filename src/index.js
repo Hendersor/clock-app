@@ -8,7 +8,8 @@ const apiLocation =
 const apiTime = "http://worldtimeapi.org/api/timezone";
 const apiQuotes = "https://programming-quotes-api.herokuapp.com/Quotes/random";
 
-const quoteApiConection = async (apiQuotes) => {
+const quoteApiConection = async () => {
+  console.log("Btn presionado");
   const quote = document.getElementById("quote");
   const author = document.getElementById("author");
   const responseQuote = await fetch(apiQuotes);
@@ -18,7 +19,7 @@ const quoteApiConection = async (apiQuotes) => {
 };
 
 const refreshIcon = document.getElementById("refreshIcon");
-refreshIcon.addEventListener("click", quoteApiConection(apiQuotes));
+refreshIcon.addEventListener("click", quoteApiConection);
 
 const conectionAPI = async (apiLocation, apiTime) => {
   const responseLocation = await fetch(apiLocation);

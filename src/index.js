@@ -25,8 +25,7 @@ refreshIcon.addEventListener("click", quoteApiConection);
 
 const conectionAPI = async (apiLocation, apiTime) => {
   const getData = await fetch(`https://api.ipdata.co?api-key=${apiKey}`);
-  const userIp = await getData.json();
-  console.log(userIp.ip); // Obtener la IP del usuario
+  const userIp = await getData.json(); // Obtener la IP del usuario
 
   // const responseLocation = await fetch(`${apiLocation}${userIp.ip}`);
   // const dataLocation = await responseLocation.json();
@@ -35,13 +34,12 @@ const conectionAPI = async (apiLocation, apiTime) => {
 
   const apiTimeConection = await fetch(`${apiTime}/America/Mexico_City`);
   const apiDataTime = await apiTimeConection.json(); //Obtenemos los datos de la zona horaria del usuario
-  console.log(apiDataTime);
 
   const location = apiDataTime.timezone;
   const apiTimeURL = `${apiTime}/${location}`;
   const resposeTime = await fetch(apiTimeURL);
   const dataTime = await resposeTime.json();
-  // deployMainData(dataTime, dataLocation);
+  deployMainData(apiDataTime); //Agregar dataTime, dataLocation como parametros de entrada
   // deployMoreData(dataTime, dataLocation);
 };
 
@@ -49,7 +47,21 @@ const conectionAPI = async (apiLocation, apiTime) => {
   console.log(await conectionAPI(apiLocation, apiTime));
 })();
 
-function deployMainData(dataTime, dataLocation) {
+function showTime() {
+  const dateTime = new Date();
+  const hrs = dateTime.getHours();
+  const min = dateTime.getMinutes();
+
+  document.getElementById("hrs").innerText = hrs;
+  document.getElementById("min").innerText = min;
+}
+
+function deployMainData(apiDataTime) {
+  console.log(apiDataTime);
+  setInterval(showTime, 10);
+
+  const timeZone = apiDataTime.datetime;
+
   const abbreviation = document.getElementById("abbreviation");
   abbreviation.innerText = dataTime.abbreviation;
 
